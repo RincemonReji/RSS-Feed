@@ -44,19 +44,19 @@ def create_feed_checker(feed_url):
         if entry.id != db.get_link(feed_url).link:
                        # ↓ Edit this message as your needs.
             if "eztv.re" in entry.link:   
-                message = f"{mirr_cmd} {entry.torrent_magneturi} \n\nTitle ⏩ {entry.title} \n\n⚠️ EZTV"
+                message = f"{mirr_cmd} {entry.torrent_magneturi}"
             elif "yts.mx" in entry.link:
-                message = f"{mirr_cmd} {entry.links[1]['href']} \n\nTitle ⏩ {entry.title} \n\n⚠️ YTS"
+                message = f"{mirr_cmd} {entry.links[1]['href']}"
             elif "rarbg" in entry.link:
-                message = f"{mirr_cmd} {entry.link} \n\nTitle ⏩ {entry.title} \n\n⚠️ RARBG"
+                message = f"{mirr_cmd} {entry.link}"
             elif "watercache" in entry.link:
-                message = f"{mirr_cmd} {entry.link} \n\nTitle ⏩ {entry.title} \n\n⚠️ TorrentGalaxy"
+                message = f"{mirr_cmd} {entry.link}"
             elif "limetorrents.pro" in entry.link:
-                message = f"{mirr_cmd} {entry.link} \n\nTitle ⏩ {entry.title} \n\n⚠️ LimeTorrents"
+                message = f"{mirr_cmd} {entry.link}"
             elif "etorrent.click" in entry.link:
-                message = f"{mirr_cmd} {entry.link} \n\nTitle ⏩ {entry.title} \n\n⚠️ ETorTV"
+                message = f"{mirr_cmd} {entry.link}"
             else:
-                message = f"{mirr_cmd} {entry.link} \n\nTitle ⏩ {entry.title} \n\n⚠️ ThePirateBay"
+                message = f"{mirr_cmd} {entry.link}"
             try:
                 msg = app.send_message(log_channel, message)
                 if app2 is not None:
